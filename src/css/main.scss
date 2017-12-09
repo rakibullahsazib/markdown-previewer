@@ -1,0 +1,95 @@
+$my-border: 10%;
+@mixin section-headings{
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+@mixin section-body{
+    font-size: 16px;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    padding:10px;
+    
+}
+body{
+    margin: 0;
+}
+#title{    
+    background-color: rgba(12, 57, 179, 0.712);
+    padding: 2%;
+    text-align: center;
+    font-size:32px;
+    border-width: 4px 20px 0px 20px;
+    border-style: solid;
+    border-color: rgba(18, 36, 95, 0.966);
+    color: rgba(223, 222, 178, 0.986);
+}
+@media (max-width: 639px) {
+    #container{
+        display:grid;
+        grid-template-rows: 50% 50%; 
+    }
+    #input{
+        grid-row: 1 / 2;
+            
+    }
+    #output{
+        grid-row: 2 / 3;
+        
+    }
+}
+@media (min-width: 640px) {
+    #container{
+        display:grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+    #input{
+        grid-column: 1 / 2;
+            
+    }
+    #output{
+        grid-column: 2 / 3;
+        
+    }
+}
+
+#input,#output{
+    display:grid;
+    grid-template-rows: 40px 1fr;
+    border: 20px solid rgba(18, 36, 95, 0.966);
+}
+
+#input-head{
+    @include section-headings;
+    grid-row: 1 / 2;
+    background-color: rgba(1, 7, 59, 0.37);
+    font-family: monospace;
+    resize: horizontal;
+}
+#output-head{
+    @include section-headings;
+    grid-row: 1 / 2;
+    background-color: rgba(4, 0, 255, 0.514);
+    font-family: sans-serif;
+}
+#input-text{
+    @include section-body;
+    margin: 0px;
+    grid-row: 2 / 3;
+    background-color: rgba(225, 236, 232, 0.363);
+    color: #121212;
+    font-family: monospace;
+}
+#output-text{
+    @include section-body;
+    grid-row: 2 / 3;
+    background-color: #b3baf0;
+    font-family: sans-serif;
+   
+}
+
+textarea{
+    resize: none;
+}
+
